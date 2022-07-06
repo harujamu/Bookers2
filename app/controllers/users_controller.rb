@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user-params)
     if @user.save
-      redirect_to_users_path
+      redirect_to action:index
     else
       render:new
     end
