@@ -5,7 +5,7 @@
       <h1>User info</h1>
 
       <table class ="table table-striped">
-        <% users.each do |user| %>
+        
         <thread>
           <tr>
             <th>name</th>
@@ -16,8 +16,12 @@
             <th>user.introduction</th>
           </tr>
         </thread>
-        <% end %>
+        
       </table>
+      <div class="actions">
+        <%= link_to "<i class="fa-solid fa-user-gear"></i>", h, class:"btn btn-sm btn-primary" %>
+      </div>
+      
     </div>
   </div>
 </div>
