@@ -10,4 +10,7 @@ class Book < ApplicationRecord
     image
   end
   
+  validates :title, presence: true
+  validates :opinion, presence: true
+  validates :image, presence: true
 end

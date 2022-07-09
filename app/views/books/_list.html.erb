@@ -1,9 +1,9 @@
 <div class ="col-md-3">
   <h2>User info</h2>
-    <table class ="table table-striped">
+    <table class ="table table-hover table-inverse">
        <thread>
         <tr>
-          <th>name</th>
+        <th>name</th>
           <th>user.name</th>
         </tr>
         <tr>
@@ -12,13 +12,13 @@
         </tr>
       </thread>
     </table>
-     <%= form_with model:@book do |f| %>
+    <a href="edit_user_path" class="btn btn-light"><i class="fa-solid fa-user-gear"></i></a>
+    <%= form_with model: @book do |f| %>
       <div class="field">
         <h2>New book</h2>
         <%= f.label :title %><br />
         <%= f.text_field :title, autofocus: true,  class:"form-control book_title" %>
       </div>
-
       <div class="field">
         <%= f.label :opinion %><br />
         <%= f.text_area :opinion, class:"form-control book_body" %>
