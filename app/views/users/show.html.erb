@@ -1,7 +1,7 @@
 <p></p>
 <div class ="container px-5 px-sm-0">
   <div class ="row">
-    <%= render 'books/list.html.erb', book: @book %>
+    <%= render 'books/list.html.erb', user: @user, book: @book %>
 
     <div class ="col-md-8 offset-md-1">
        <h2>Books</h2>   
@@ -20,7 +20,7 @@
               <tr>
                 <td><%= image_tag book.get_image(80,80) %></td>
                 <td><%= book.title %></td>
-                <td><%= book.opinion %></td>
+                <td><%= book.body %></td>
               </tr>
               <% end %>
             </tbody>
