@@ -5,10 +5,10 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(user-params)
+    @user = User.new(user_params)
     if @user.save
       flash[:notice] = "successfully"
-      redirect_to action:index
+      redirect_to book_path(current_user)
     else
       render:new
     end
@@ -26,16 +26,16 @@ class UsersController < ApplicationController
     @books = @user.books
   end
 
-  def edit
-    @user = current_user
+  def edit 
+    @user = User.find(params[:id])
     @books = Book.all
   end
   
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    flash[:notice] = "successfully"
-    redirect_to_book_path(current_user.id)
+    flash[:notice] = "You have updated user successfully."
+    redirect_to user_path(current_user.id)
   end
   
   private
