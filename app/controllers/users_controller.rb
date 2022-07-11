@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user-params)
     if @user.save
+      flash[:notice] = "successfully"
       redirect_to action:index
     else
       render:new
@@ -33,6 +34,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
+    flash[:notice] = "successfully"
     redirect_to_book_path(current_user.id)
   end
   
